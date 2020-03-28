@@ -121,7 +121,6 @@ $ apt-get install docker-compose
     example: - docker run -it -d -p 5000:9005 testing_pwa_node:latest
 
 ```
-
 # Open Chrome browser and run
 
 ```browser
@@ -129,6 +128,77 @@ $ apt-get install docker-compose
     localhost:5000
 
 ```
+
+# Zipping Docker image
+
+```docker image
+    $ docker save -o filename.tar <image-name>
+Example:- 
+    $ docker save -o docker_image_node.tar testing_pwa_node
+
+```
+
+# Load docker image
+```load image
+    $ docker load -i filename.tar
+Example:-
+    $ docker load -i testing_pwa_node.tar
+
+```
+# Docker-compose
+```docker-compose
+docker-compose.yml must be included:-
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+  redis:
+    image: "redis:alpine"
+The web service uses an image that’s built from the Dockerfile in the current directory.
+ It then binds the container and the host machine to the exposed port
+1) First load the docker image
+    $ docker load -i filename.tar
+2) Check docker image is loaded or not
+    $ docker images
+3) docker-compose up
+    $ docker-compose up
+
+```
+# Docker deletion commands
+```docker delete
+1) Remove docker images
+The docker system prune command will remove all stopped containers,
+ all dangling images, and all unused networks:
+    $ docker system prune
+You’ll be prompted to continue, use the -f or --force flag to bypass the prompt.
+Output-
+WARNING! This will remove:
+        - all stopped containers
+        - all networks not used by at least one container
+        - all dangling images
+        - all build cache
+Are you sure you want to continue? [y/N]
+
+2) Removing Docker Containers
+You can get a list of all containers by passing the -a flag to the docker container ls command:
+    $ docker container ls -a
+Once you know the CONTAINER ID of the containers you want to delete,
+pass it to the docker container rm command. For example, to remove the first two containers listed in the output above run:
+    $ docker container rm cc3f2ff51cab cd20b396a061
+3) Remove all stopped containers
+Before performing the removal command, you can get a list of all non-running (stopped) 
+containers that will be removed using the following command:
+    $ docker container ls -a --filter status=exited --filter status=created 
+4) Remove one or more images
+    $ docker image ls
+    $ docker rmi <IMAGE ID>
+Forcefully
+    $ docker rmi -f <IMAGE ID>
+
+```
+
 
 # docker important commands
 

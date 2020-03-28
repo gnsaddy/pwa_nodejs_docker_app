@@ -1,0 +1,10 @@
+
+version: '3'
+
+services:
+  web:
+    user: $UID:$GID
+    image:
+      testing_pwa_node
+    ports:
+      - "3002:9005"
