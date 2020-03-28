@@ -74,13 +74,35 @@ If you want to avoid typing sudo whenever you run the docker command, add your u
     $ sudo usermod -aG docker ${USER}
 If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
 
-sudo usermod -aG docker ${USER}
+    $ sudo usermod -aG docker ${USER}
 To apply the new group membership, you can log out of the server and back in, or you can type the following:
 
-su - ${USER}
+    $ su - ${USER}
 You will be prompted to enter your user’s password to continue. Afterwards, you can confirm that your user is now added to the docker group by typing:
 
-id -nG
+    $ id -nG
+
+```
+
+# docker-compose
+
+```
+>>>>To install docker compose for the steps
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+OR
+ 
+apt-get install docker-compose
+
+
+>>>>to check the versions of the docker and docker-compose
+docker --version
+docker-compose --version
+
+
+>>>>first start the docker service by using command
+service docker start
 
 ```
 
