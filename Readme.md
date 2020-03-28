@@ -36,16 +36,6 @@ Name - Aditya Raj
 ```
 
 
-# Building docker image
-
-```bash
-
-    docker build -t <imagename:version> .
-    example :-  docker build -t testing_pwa_node:latest
-
-```
-
-
 # Docker Installation
 ```
 Step 1 — Installing Docker
@@ -88,25 +78,32 @@ You will be prompted to enter your user’s password to continue. Afterwards, yo
 
 ```
 >>>>To install docker compose for the steps
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
 
 OR
  
-apt-get install docker-compose
+$ apt-get install docker-compose
 
 
 >>>>to check the versions of the docker and docker-compose
-docker --version
-docker-compose --version
+    $ docker --version
+    $ docker-compose --version
 
 
 >>>>first start the docker service by using command
-service docker start
+    $ service docker start
 
 ```
 
+# Building docker image
 
+```bash
+
+    docker build -t <imagename:version> .
+    example :-  docker build -t testing_pwa_node:latest
+
+```
 
 # Running docker container
 
@@ -128,6 +125,20 @@ service docker start
 
 ```
 
+# docker important commands
+
+```
+    $ docker --version
+    $ docker images
+To check running docker images
+    $ docker ps
+To stop a running process
+    $ docker stop <docker-image-name>
+To build a docker image
+    $ docker build -t <image-name>
+NOTE - Must contain Dockerfile
+
+```
 
 # Topic Covered :-
 
