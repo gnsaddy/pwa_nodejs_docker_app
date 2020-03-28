@@ -67,6 +67,25 @@ Docker should now be installed, the daemon started, and the process enabled to s
     $ sudo systemctl status docker
 
 ```
+
+```
+Step 2 — Executing the Docker Command Without Sudo
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+    $ sudo usermod -aG docker ${USER}
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+
+sudo usermod -aG docker ${USER}
+To apply the new group membership, you can log out of the server and back in, or you can type the following:
+
+su - ${USER}
+You will be prompted to enter your user’s password to continue. Afterwards, you can confirm that your user is now added to the docker group by typing:
+
+id -nG
+
+```
+
+
+
 # Running docker container
 
 
