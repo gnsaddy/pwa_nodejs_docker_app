@@ -93,3 +93,21 @@ Name - Aditya Raj
 19. Getting caching assets
 
 ```
+
+# Tools and technology used:
+``` 
+1. HTML5
+2. CSS3
+3. vanilla Javascript
+4. Http server
+5. VS code
+6. Git
+7. Github
+8. Express server
+9. Nodejs and npm
+10.Docker Container
+11.Service Worker
+12.Manifest
+13.Android SDK
+
+```
