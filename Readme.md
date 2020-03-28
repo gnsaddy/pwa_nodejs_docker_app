@@ -31,6 +31,11 @@ Name - Aditya Raj
 
 
     node server.js
+To check running port:-
+    $ sudo lsof -i -P -n
+kill running port:-
+    $ fuser -k PORT-NUMBER/tcp
+    
 
 
 ```
