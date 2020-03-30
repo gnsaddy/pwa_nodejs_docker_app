@@ -5,6 +5,6 @@ services:
   web:
     user: $UID:$GID
     image:
-      testing_pwa_node
+      testing_pwa_node:latest
     ports:
-      - "3002:9005"
+      - "9005:9005"

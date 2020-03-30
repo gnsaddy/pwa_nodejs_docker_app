@@ -106,7 +106,7 @@ $ apt-get install docker-compose
 ```bash
 
     docker build -t <imagename:version> .
-    example :-  docker build -t testing_pwa_node:latest
+    example :-  docker build -t testing_pwa_node:latest .
 
 ```
 
